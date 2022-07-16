@@ -1,1 +1,1 @@
-# javascript-assigment
+Rock Paper Scissor game
