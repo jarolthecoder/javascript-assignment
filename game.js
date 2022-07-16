@@ -1,17 +1,6 @@
 window.onload = ()=> {
     window.alert('Rock, Paper and Scissor Game');
 
-    //Computer
-    const computerOptions = ['Rock', 'Paper', 'Scissor'] 
-    const computerNumber = Math.floor(Math.random() * 3);
-    const computerChoice = computerOptions[computerNumber];
-
-    const computerPlay = ()=> {
-        console.log('Computer: ' + computerChoice)
-        return computerChoice;
-    }
-    computerPlay()
-
     // Player
     let playerChoice = window.prompt('Enter your choice');
 
@@ -24,34 +13,46 @@ window.onload = ()=> {
     }
     playerPlay()
 
+    //Computer
+    const computerOptions = ['Rock', 'Paper', 'Scissor'] 
+    const computerNumber = Math.floor(Math.random() * 3);
+    const computerChoice = computerOptions[computerNumber];
+
+    const computerPlay = ()=> {
+        console.log('Computer: ' + computerChoice)
+        return computerChoice;
+    }
+    computerPlay()
+
+
     // Game
     const startGame = (playerSelection, computerSelection)=> {
-
+    
         let result;
 
         //Check conditions on for Rock
-        if(playerSelection === 'Rock' && computerSelection === 'Scissor') {
+        if(playerSelection === 'Rock' || playerSelection === 'rock' && computerSelection === 'Scissor') {
                 return result = 'You Win! Rock beats Scissor';
 
-            } else if (playerSelection === 'Rock' && computerSelection === 'Paper') {
+            } else if (playerSelection === 'Rock' || playerSelection === 'rock' && computerSelection === 'Paper') {
                 return result = 'You Lose! Paper beats Rock';
             }
 
             //Check conditions on for Paper
-            if(playerSelection === "Paper" && computerSelection === 'Rock') {
+            if(playerSelection === "Paper" || playerSelection === "paper" && computerSelection === 'Rock') {
                 return result = 'You Win! Paper beats Rock'
             
-            } else if (playerSelection === "Paper" && computerSelection === "Scissor") {
+            } else if (playerSelection === "Paper" || playerSelection === "paper" && computerSelection === "Scissor") {
                 result = 'You Lose! Scissor beats Paper'
                 return result = 'You Lose! Scissor beats Paper'
             }
 
 
             //Check conditions on for Scissor and Draw
-            if (playerSelection === "Scissor" && computerSelection === 'Paper') {
+            if (playerSelection === "Scissor" || playerSelection === "scissor" && computerSelection === 'Paper') {
                 return result = 'You Win! Scissor beats Paper'
             
-            } else if (playerSelection === "Scissor" && computerSelection === "Rock") {
+            } else if (playerSelection === "Scissor" || playerSelection === "scissor" &&  computerSelection === "Rock") {
                 return result = 'You Lose! Rock beats Scissor'
             
             }  else {
