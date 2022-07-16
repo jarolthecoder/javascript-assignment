@@ -1,12 +1,12 @@
 window.onload = ()=> {
-    window.alert('Rock, Paper and Scissor Game');
+    window.alert(`Rock, Paper and Scissor Game. Let's Start!`);
 
     // Player
-    let playerChoice = window.prompt('Enter your choice');
+    let playerChoice = prompt('Enter your choice');
 
     const playerPlay = ()=> {
         if (playerChoice.length <= 1) {
-            playerChoice = window.prompt('Please enter Rock, Paper or Scissor');
+            playerChoice = prompt('Please enter Rock, Paper or Scissor');
         }
         console.log('Player: ' + playerChoice)
         return playerChoice;
