@@ -1,66 +1,93 @@
 window.onload = ()=> {
-    window.alert(`Rock, Paper and Scissor Game. Let's Start!`);
+    window.alert(`Rock, Paper, Scissors Game. Let's Start!`);
+    const gameOptions = { 1: "rock", 2: "paper", 3: "scissors" };
 
-    // Player
-    let playerChoice = prompt('Enter your choice');
-
-    const playerPlay = ()=> {
-        if (playerChoice.length <= 1) {
-            playerChoice = prompt('Please enter Rock, Paper or Scissor');
-        }
-        console.log('Player: ' + playerChoice)
-        return playerChoice;
-    }
-    playerPlay()
-
-    //Computer
-    const computerOptions = ['Rock', 'Paper', 'Scissor'] 
-    const computerNumber = Math.floor(Math.random() * 3);
-    const computerChoice = computerOptions[computerNumber];
-
+    // Computer function
     const computerPlay = ()=> {
-        console.log('Computer: ' + computerChoice)
-        return computerChoice;
+        let computerOptions = gameOptions;
+        return computerOptions[Math.floor(Math.random() * 3) + 1];
     }
-    computerPlay()
 
+    // Game function
+    let playerChoice;
+    let playerScore = 0;
+    let computerScore = 0;
+    let round = 0;
+    let result;
 
-    // Game
     const startGame = (playerSelection, computerSelection)=> {
-        let result;
 
-        //Check conditions on for Rock
-        if((playerSelection === 'Rock' || playerSelection === 'rock') && (computerSelection === 'Scissor')) {
-                return result = 'You Win! Rock beats Scissor';
+        // Check conditions for Rock
+        if(playerSelection === 'rock' && computerSelection === 'scissors') {
+            playerScore++;  
+            result = 'You Win! Rock beats Scissors'
+            return result + ' - Player: ' + playerScore + ' Computer: ' + computerScore;
 
-            } else if ((playerSelection === 'Rock' || playerSelection === 'rock') && (computerSelection === 'Paper')) {
-                return result = 'You Lose! Paper beats Rock';
-            }
+        } else if (playerSelection === 'rock' && computerSelection === 'paper') {
+            computerScore++;
+            result = 'You Lose! Paper beats Rock';  
+            return result + ' - Player: ' + playerScore + ' Computer: ' + computerScore;
+        }
 
-            //Check conditions on for Paper
-            if((playerSelection === "Paper" || playerSelection === "paper") && (computerSelection === 'Rock')) {
-                return result = 'You Win! Paper beats Rock'
+        // Check conditions for Paper
+        if(playerSelection === 'paper' && computerSelection === 'rock') {
+            playerScore++;
+            result = 'You Win! Paper beats Rock'; 
+            return result + ' - Player: ' + playerScore + ' Computer: ' + computerScore;
             
-            } else if ((playerSelection === "Paper" || playerSelection === "paper") && (computerSelection === "Scissor")) {
-                result = 'You Lose! Scissor beats Paper'
-                return result = 'You Lose! Scissor beats Paper'
-            }
+        } else if (playerSelection === 'paper' && computerSelection === 'scissors') {
+            computerScore++;
+            result = 'You Lose! Scissors beats Paper';    
+            return result + ' - Player: ' + playerScore + ' Computer: ' + computerScore; 
+        }
 
+        // Check conditions for Scissor and Draw
+        if (playerSelection === 'scissors' && computerSelection === 'paper') {
+            playerScore++;
+            result = 'You Win! Scissors beats Paper';    
+            return result + ' - Player: ' + playerScore + ' Computer: ' + computerScore;
 
-            //Check conditions on for Scissor and Draw
-            if ((playerSelection === "Scissor" || playerSelection === "scissor") && (computerSelection === 'Paper')) {
-                return result = 'You Win! Scissor beats Paper'
+        } else if (playerSelection === 'scissors' && computerSelection === 'rock') {
+            computerScore++;
+            result = 'You Lose! Scissors beats Paper';
+            return result + ' - Player: ' + playerScore + ' Computer: ' + computerScore;
             
-            } else if ((playerSelection === "Scissor" || playerSelection === "scissor") &&  (computerSelection === "Rock")) {
-                return result = 'You Lose! Rock beats Scissor'
-            
-            }  else {
-                return result = 'It is a draw!'
-            }
-
+        } else {
+            result = 'It is a draw!'
+            return result + ' - Player: ' + playerScore + ' Computer: ' + computerScore;
+        }
     }
 
-    console.log(startGame(playerChoice, computerChoice));
+    // Loop for rounds and text cases and spelling check
+    for(let i=0; i<5; i++){
+        round++
+        playerChoice = prompt(`Round ${round} - Enter your choice`).toLowerCase();
+
+        if (playerChoice.length <= 1) {
+            playerChoice = prompt('Please enter Rock, Paper or Scissors').toLowerCase();
+        } else if(playerChoice.indexOf('rock') === -1 &&  playerChoice.indexOf('paper') === -1 &&  playerChoice.indexOf('scissors') === -1 ) {
+            playerChoice = prompt('Please enter Rock, Paper or Scissors').toLowerCase();
+        }
+
+        const computerSelection = computerPlay();
+        console.log('Player: ' + playerChoice);
+        console.log('Computer: ' + computerSelection);
+        console.log(startGame(playerChoice, computerSelection));
+    }
+
+    // Ends game when 5 rounds are completed
+    const endGame = ()=> {
+        if (playerScore > computerScore) {
+            return result = 'Game result: Congratulations! You are the Winner.';
+
+        } else if(playerScore < computerScore) {
+            return result = 'Game result: You Lose! Computer Wins.';
+
+        } else {
+            return result = 'Game result: It is a draw!'
+        }
+    }
+    console.log(endGame());
 }
 
 
