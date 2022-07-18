@@ -65,7 +65,7 @@ window.onload = ()=> {
 
         if (playerChoice.length <= 1) {
             playerChoice = prompt('Please enter Rock, Paper or Scissors').toLowerCase();
-        } else if(playerChoice.indexOf('rock') === -1 &&  playerChoice.indexOf('paper') === -1 &&  playerChoice.indexOf('scissors') === -1 ) {
+        } else if(playerChoice.indexOf('rock') === -1 &&  playerChoice.indexOf('paper') === -1 &&  playerChoice.indexOf('scissors') === -1) {
             playerChoice = prompt('Please enter Rock, Paper or Scissors').toLowerCase();
         }
 
