@@ -14,7 +14,6 @@ window.onload = ()=> {
 
     const playerPlay = (round)=> {
        let playerInput = prompt(`Round ${round} - Enter your choice`).toLowerCase();
-        return playerInput
     }
 
 
