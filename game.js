@@ -6,16 +6,16 @@ window.onload = ()=> {
     let result;
 
 
-    // Computer selection function
+    // Computer function
     const computerPlay = ()=> {
         let computerOptions = gameOptions;
         return computerOptions[Math.floor(Math.random() * 3) + 1];
     };
-    
+
     // Player selection function
     const playerPlay = (round)=> {
        let playerInput = prompt(`Round ${round} - Enter your choice`).toLowerCase();
-       return playerInput;
+        return playerInput;
     };
 
     // Round function
@@ -65,12 +65,11 @@ window.onload = ()=> {
                     result = 'It is a draw!';
                     break;
             };
-        } else {
-            playerSelection = prompt('Please enter Rock, Paper or Scissors').toLowerCase();
-            if (playerSelection != undefined) {
-                playRound(playerSelection, computerSelection);
-            };
         };
+
+        while (playerSelection !== 'rock' && playerSelection !== 'paper' && playerSelection !== 'scissors') {
+                playerSelection = prompt('Invalid choice! Please enter Rock, Paper or Scissors.').toLowerCase();  
+        }; 
 
         let messagePlayerSelection = `Player: ${playerSelection}`;
         let messageComputerSelection = `Computer: ${computerSelection}`;
@@ -85,7 +84,7 @@ window.onload = ()=> {
         };
     
     };
-    
+
     // Game function - Loops game for 5 rounds
     const game = () => {
         let round = 0;
@@ -101,7 +100,7 @@ window.onload = ()=> {
             console.log(roundResult.messageComputerSelection);
             console.log(roundResult.messageRoundResult);
             console.log( 'Player: ' + playerScore + ' Computer: ' + computerScore);
-        }
+        };
     };
 
     game();
@@ -133,3 +132,5 @@ window.onload = ()=> {
     endGame();
 };
 
+
+  
