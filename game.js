@@ -6,19 +6,19 @@ window.onload = ()=> {
     let result;
 
 
-    // Computer function
+    // Computer selection function
     const computerPlay = ()=> {
         let computerOptions = gameOptions;
         return computerOptions[Math.floor(Math.random() * 3) + 1];
     };
-
+    
+    // Player selection function
     const playerPlay = (round)=> {
        let playerInput = prompt(`Round ${round} - Enter your choice`).toLowerCase();
-        
-        return playerInput;
+       return playerInput;
     };
 
-
+    // Round function
     const playRound = (playerSelection, computerSelection)=> {
 
         if (playerSelection === 'rock') {
@@ -85,7 +85,8 @@ window.onload = ()=> {
         };
     
     };
-
+    
+    // Game function - Loops game for 5 rounds
     const game = () => {
         let round = 0;
 
@@ -105,7 +106,7 @@ window.onload = ()=> {
 
     game();
 
-    // Ends game when 5 rounds are completed
+    // Final result function - Ends game when 5 rounds are completed
     const endGame = ()=> {
         if (playerScore > computerScore) {
             result = 'Congratulations! You are the Winner.';
