@@ -10,13 +10,13 @@ window.onload = ()=> {
     const computerPlay = ()=> {
         let computerOptions = gameOptions;
         return computerOptions[Math.floor(Math.random() * 3) + 1];
-    }
+    };
 
     const playerPlay = (round)=> {
        let playerInput = prompt(`Round ${round} - Enter your choice`).toLowerCase();
         
-        return playerInput
-    }
+        return playerInput;
+    };
 
 
     const playRound = (playerSelection, computerSelection)=> {
@@ -65,53 +65,70 @@ window.onload = ()=> {
                     result = 'It is a draw!';
                     break;
             };
-        } 
-        
-        else {
+        } else {
             playerSelection = prompt('Please enter Rock, Paper or Scissors').toLowerCase();
             if (playerSelection != undefined) {
                 playRound(playerSelection, computerSelection);
             };
         };
 
-        return result + ' - Player: ' + playerScore + ' Computer: ' + computerScore;
+        let messagePlayerSelection = `Player: ${playerSelection}`;
+        let messageComputerSelection = `Computer: ${computerSelection}`;
+        let messageRoundResult = result;
+
+        return {
+            messagePlayerSelection: messagePlayerSelection,
+            messageComputerSelection: messageComputerSelection,
+            messageRoundResult: messageRoundResult,
+            playerScore: playerScore,
+            computerScore: computerScore,
+        };
     
-    }
+    };
 
     const game = () => {
         let round = 0;
 
         for(let i=0; i<5; i++){
             round++
-
-            const playerChoice = playerPlay(round)
+            const playerChoice = playerPlay(round);
             const computerChoice = computerPlay();
-            const roundResult = playRound(playerChoice, computerChoice)
+            const roundResult = playRound(playerChoice, computerChoice);
 
-            console.log('Player: ' + playerChoice);
-            console.log('Computer: ' + computerChoice);
-            console.log(roundResult)
+            console.log(`------- Round ${round} -------`);
+            console.log(roundResult.messagePlayerSelection);
+            console.log(roundResult.messageComputerSelection);
+            console.log(roundResult.messageRoundResult);
+            console.log( 'Player: ' + playerScore + ' Computer: ' + computerScore);
         }
+    };
 
-    }
-
-    game()
+    game();
 
     // Ends game when 5 rounds are completed
     const endGame = ()=> {
         if (playerScore > computerScore) {
-            return result = 'Game result: Congratulations! You are the Winner.';
+            result = 'Congratulations! You are the Winner.';
+            console.log(`------ Game Result ------`);
+            console.log( 'Player: ' + playerScore + ' Computer: ' + computerScore);
+            console.log(result);
 
         } else if(playerScore < computerScore) {
-            return result = 'Game result: You Lose! Computer Wins.';
+            console.log(`------ Game Result ------`);
+            result = 'You Lose! Computer Wins.';
+            console.log( 'Player: ' + playerScore + ' Computer: ' + computerScore);
+            console.log(result);
 
         } else {
-            return result = 'Game result: It is a draw!'
+            console.log(`------ Game Result ------`);
+            result = 'It is a draw!';
+            console.log( 'Player: ' + playerScore + ' Computer: ' + computerScore);
+            console.log(result);
         }
-    }
 
-    console.log(endGame())
-}
+        return result;
+    };
 
+    endGame();
+};
 
-  
