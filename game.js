@@ -20,7 +20,6 @@ window.onload = ()=> {
 
     // Round function
     const playRound = (playerSelection, computerSelection)=> {
-
         if (playerSelection === 'rock') {
             switch (computerSelection) {
                 case 'rock':
@@ -35,7 +34,6 @@ window.onload = ()=> {
                     playerScore++;
                     break;
             };
-
         } else if (playerSelection === 'paper') {
             switch (computerSelection) {
                 case 'rock':
@@ -50,7 +48,6 @@ window.onload = ()=> {
                     computerScore++;
                     break;
             };
-
         } else if (playerSelection === 'scissors') {
             switch (computerSelection) {
                 case 'rock':
