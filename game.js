@@ -6,7 +6,7 @@ window.onload = ()=> {
     let result;
 
 
-    // Computer function
+    // Computer random selection function
     const computerPlay = ()=> {
         let computerOptions = gameOptions;
         return computerOptions[Math.floor(Math.random() * 3) + 1];
