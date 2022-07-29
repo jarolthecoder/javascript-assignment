@@ -1,7 +1,5 @@
 # Rock Paper Scissors Console Game
 ## Brainnest Frontend Development Industry Training Assigment
-
-## About The Game
 The game is programmed for 5 rounds in which both, the players choice and the computers choice will be evaluated and a point will be given to the winner of the round.
 The score will be updated every round. At the end of the 5 rounds the program will check the higher score be declare the winner.
 <ol> 
