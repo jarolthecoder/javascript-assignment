@@ -15,7 +15,7 @@ The game will continue after the player inputs the correct value.
 <hr>
 <h3>Instructions</h3>
 <ol> 
-  <li>Open your Browsers Developer Console.<a href="https://balsamiq.com/support/faqs/browserconsole/#:~:text=You%20can%20also%20use%20Option,to%20select%20the%20Console%20tab.">Help</a></li>
+  <li>Open your Browsers Developer Console.<a href="https://balsamiq.com/support/faqs/browserconsole/#:~:text=You%20can%20also%20use%20Option,to%20select%20the%20Console%20tab."> Help</a></li>
   <li>Enter a choice between: Rock, Paper, Scissors</li>
   <li>Play for 5 rounds</li>
 </ol>
