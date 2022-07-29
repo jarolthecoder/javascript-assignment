@@ -8,7 +8,7 @@ The players input will be checked for validation, and the round will not continu
 <ul>
   <li>Players input is empty</li>
   <li>Players input is not one of the choices allowed - "Rock", "Paper" or "Scissors</li>
-</ul><br>
+</ul>
 
 The game will continue after the player inputs the correct value.
 
