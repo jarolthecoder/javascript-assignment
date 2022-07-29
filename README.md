@@ -1,5 +1,5 @@
 <h1>Rock Paper Scissors Console Game</h1>
-<h2>Brainnest Frontend Development Industry Training Assigment</h2>
+<h2><a href="https://www.brainnest.consulting/" target="_blak">Brainnest</a> Frontend Industry Training/h2>
 
 <h3>About The Game</h3>
 The game is programmed for 5 rounds in which both, the players choice and the computers choice will be evaluated and a point will be given to the winner of the round.<br>
