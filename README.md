@@ -8,7 +8,7 @@ The score will be updated every round. At the end of the 5 rounds the program wi
 The players input will be checked for validation, and the round will not continue if: 
 <ul>
   <li>Players input is empty</li>
-  <li>Players input is not one of the choices allowed - "Rock", "Paper" or "Scissors</li>
+  <li>Players input is not one of the choices allowed - "Rock", "Paper" or "Scissors"</li>
 </ul>
 
 The game will continue after the player inputs the correct value.
