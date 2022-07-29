@@ -1,5 +1,6 @@
 # Rock Paper Scissors Console Game
-### Brainnest: Front-End Development Industry Training Assigment
+## Project Assigment from my Frontend Development Industry Training at Brainnest
+
 Link to the game: https://jarolthecoder.github.io/rock-paper-scissors-console-game/
 
 ## Instruction
