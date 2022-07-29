@@ -11,7 +11,7 @@ The players input will be checked for validation, and the round will not continu
 </ul>
 
 The game will continue after the player inputs the correct value.
-
+<hr>
 <h3>Instructions</h3>
 <ol> 
   <li>Open your Browsers Developer Console. <a href="https://balsamiq.com/support/faqs/browserconsole/#:~:text=You%20can%20also%20use%20Option,to%20select%20the%20Console%20tab.">Help</a></li>
